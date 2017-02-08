@@ -5,7 +5,6 @@ import Deck from '../scripts/deck'
 import Guess from '../scripts/guess'
 import Round from '../scripts/round'
 
-
 describe('Round', () => {
 
   it('Round should be a function', () => {
