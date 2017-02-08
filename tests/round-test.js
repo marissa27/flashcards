@@ -141,18 +141,41 @@ describe('Round', () => {
     assert.equal(round.numberCorrect, 0);
   })
 
+  it('after a guess should remove first index card and keep track of number correct', () => {
 
+    let card1 = new Card({question:"What is the capital of Alaska?", answer:"Juneau"})
+
+    let card2 = new Card({question:"What is the capital of Colorado?", answer:"Denver"})
+
+    let deck = new Deck([card1, card2])
+
+    let round = new Round(deck)
+
+    assert.equal(deck.count(), 2);
+
+    assert.equal(round.numberCorrect, 0);
+
+    round.recordGuess('Juneau')
+
+    assert.equal(deck.count(), 1);
+
+    assert.equal(round.numberCorrect, 1);
+  })
+
+  it('should know percentCorrect of round', () => {
+
+    let card1 = new Card({question:"What is the capital of Alaska?", answer:"Juneau"})
+
+    let card2 = new Card({question:"What is the capital of Colorado?", answer:"Denver"})
+
+    let deck = new Deck([card1, card2])
+
+    let round = new Round(deck)
+
+    round.recordGuess('Juneau')
+    round.recordGuess('Steamboat')
+
+    assert.equal(round.percentCorrect(), 50);
   });
 
-  // round.currentCard()
-  // => Card { answer: "93,000,000", question: "Approximately how many miles are in one astronomical unit?"}
-  // round.recordGuess("2")
-  // => Guess {card: Card { answer:"93,000,000", question: "Approximately how many miles are in one astronomical unit?"}, response: "2"}
-  // round.guesses.count
-  // => 2
-  // round.guesses[1].feedback
-  // => "Incorrect."
-  // round.numberCorrect
-  // => 1
-  // round.percentCorrect()
-  // => 50
+});

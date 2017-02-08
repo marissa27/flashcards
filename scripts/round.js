@@ -18,12 +18,14 @@ class Round {
 
     if(this.guesses[0].feedback() === 'kudos, champ.') {
       this.numberCorrect++
-    } else {
-      
+    }
+    this.deck.cards.shift()
     return this.guesses
   }
+  percentCorrect(){
+   let percentage = (this.numberCorrect/this.guesses.length)*100
+   return percentage
+ };
 }
-}
-export default Round
 
-// round.recordGuess('Juneau')
+export default Round
