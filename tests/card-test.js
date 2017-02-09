@@ -27,10 +27,9 @@ describe('Card', () => {
   });
 
   it('should hold both question and answer', () => {
-    let card = new Card({answer: 'Juneau', question: 'What is the capital of Alaska?'});
+    let card = new Card({answer: 'Juneau',
+                        question: 'What is the capital of Alaska?'});
     assert.equal(card.answer, 'Juneau')
     assert.equal(card.question, 'What is the capital of Alaska?');
   });
-
-
 });
