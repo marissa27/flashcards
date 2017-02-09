@@ -20,7 +20,7 @@ describe('Guess', () => {
   it('should be able to create a guess', () => {
     let card1 = new Card({question: 'What is the capital of Alaska?'});
 
-    let guess1 = new Guess({response: "Juneau", card: card1})
+    let guess1 = new Guess({response: "Juneau", card: card1});
 
     assert.equal(guess1.response, 'Juneau');
   });
@@ -28,7 +28,7 @@ describe('Guess', () => {
   it('check for feedback()', () => {
     let card1 = new Card({question: 'What is the capital of Alaska?', answer: 'Juneau'});
 
-    let guess1 = new Guess({response: "Denver", card: card1})
+    let guess1 = new Guess({response: "Denver", card: card1});
 
     assert.isFunction(guess1.feedback);
   });
@@ -36,7 +36,7 @@ describe('Guess', () => {
   it('should display if correct', () => {
     let card1 = new Card({question: 'What is the capital of Alaska?'});
 
-    let guess1 = new Guess({response: "Juneau", card: card1})
+    let guess1 = new Guess({response: "Juneau", card: card1});
 
     assert.equal(guess1.response, 'Juneau');
   });
@@ -44,7 +44,7 @@ describe('Guess', () => {
   it('should display if wrong', () => {
     let card1 = new Card({question: 'What is the capital of Alaska?', answer: 'Juneau'});
 
-    let guess1 = new Guess({response: "Denver", card: card1})
+    let guess1 = new Guess({response: "Denver", card: card1});
 
     assert.notEqual('Juneau', 'Denver', 'false');
   });
@@ -52,7 +52,7 @@ describe('Guess', () => {
   it('should see if guess.correct is false', ()=> {
     let card1 = new Card({question: 'What is the capital of Alaska?', answer: 'Juneau'});
 
-    let guess1 = new Guess({response: "Denver", card: card1})
+    let guess1 = new Guess({response: "Denver", card: card1});
 
     assert.equal(guess1.correct, false);
   });
@@ -60,9 +60,9 @@ describe('Guess', () => {
   it('should see if guess.correct is true', () => {
     let card1 = new Card({question: 'What is the capital of Alaska?', answer: 'Juneau'});
 
-    let guess1 = new Guess({response: "Juneau", card: card1})
+    let guess1 = new Guess({response: "Juneau", card: card1});
 
-    assert.equal(guess1.correct, true)
+    assert.equal(guess1.correct, true);
   })
 
 

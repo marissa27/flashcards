@@ -10,9 +10,9 @@ class Guess {
 
   feedback() {
     if(this.correct) {
-      return 'kudos, champ.'
+      return 'kudos, champ.';
     } else {
-      return 'go back to school'
+      return 'go back to school';
     }
   }
 }

@@ -3,26 +3,26 @@ import { assert } from 'chai';
 import Card from '../scripts/card'
 import CardsGenerator from '../scripts/card-gen'
 
-let filename = "cards.txt"
+let filename = "cards.txt";
 describe('Card Generator', () => {
 
-  let cardsGenerator = new CardsGenerator(filename)
+  let cardsGenerator = new CardsGenerator(filename);
 
   it('CardGenerator should be a function', () => {
     assert.isFunction(CardsGenerator);
   });
 
   it('readFile is a function', () => {
-    assert.isFunction(cardsGenerator.readFile)
+    assert.isFunction(cardsGenerator.readFile);
   })
 
   it('Should take in a file', () => {
-    assert.equal(cardsGenerator.filename, "cards.txt")
+    assert.equal(cardsGenerator.filename, "cards.txt");
   })
 
   it('should split lines into their own arrays', () => {
-    let cards = cardsGenerator.readFile(filename)
-    assert.equal(cards.length, 4)
+    let cards = cardsGenerator.readFile(filename);
+    assert.equal(cards.length, 4);
   })
 
 });
@@ -40,7 +40,5 @@ describe('Card Generator', () => {
 // //   a.push(newCards)
 // //   return a;
 // // },[])
-// //
-// //
 // //
 // // console.log(reduceWords);
